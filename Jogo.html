@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="icon" href="images/favicon.png" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Emoções</title>
+    <link rel="stylesheet" href="css/Jogo.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="menu-icon">
+                <span class="fas fa-bars"></span>
+            </div>
+            <div class="logo">
+                Divertida mente
+            </div>
+            <div class="nav-items">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="">Sobre</a></li>
+                <li><a href="Jogo.html">Jogo</a></li>
+                <li><a href="">Contatos</a></li>
+            </div>
+            <div class="search-icon">
+                <span class="fas fa-search"></span>
+            </div>
+            <div class="cancel-icon">
+                <span class="fas fa-times"></span>
+            </div>
+
+        </nav>
+
+
+        <script>
+            const menuBtn = document.querySelector(".menu-icon span");
+            const searchBtn = document.querySelector(".search-icon");
+            const cancelBtn = document.querySelector(".cancel-icon");
+            const items = document.querySelector(".nav-items");
+            const form = document.querySelector("form");
+            menuBtn.onclick = () => {
+                items.classList.add("active");
+                menuBtn.classList.add("hide");
+                searchBtn.classList.add("hide");
+                cancelBtn.classList.add("show");
+            }
+            cancelBtn.onclick = () => {
+                items.classList.remove("active");
+                menuBtn.classList.remove("hide");
+                searchBtn.classList.remove("hide");
+                cancelBtn.classList.remove("show");
+                form.classList.remove("active");
+                cancelBtn.style.color = "#ff3d00";
+            }
+            searchBtn.onclick = () => {
+                form.classList.add("active");
+                searchBtn.classList.add("hide");
+                cancelBtn.classList.add("show");
+            }
+        </script>
+    </header>
+
+    <div class="AudioBot">
+        <div class="AudioControl">
+            <audio id="myAudio">
+                <source id="source1" src="audio/trilha-sonora-do-divertida-mente.wav" type="audio/x-wav">
+                <source id="source2" src="audio/Disney Pixars Inside Out - 02 - Team Building.mp3" type="audio/mp3">
+                <source id="source3" src="audio/Disney Pixars Inside Out - 03 Nomanisone Island  National Movers.mp3" type="audio/mp3">
+            </audio>
+    
+            <img id="audioIcon" src="img/volume-high-solid.svg" alt="Play" onclick="toggleAudio()">
+        </div>
+    </div>
+    
+
+    <div id="resultadoModal" class="modal">
+        <div id="modalContent" class="modal-content">
+            <div id="countdown" class="timer"></div>
+        </div>
+    </div>
+
+
+    <main class="tela-principal">
+        <section class='conteudos'>
+            <h1>Quiz de Emoções</h1>
+            <article class='centro' id='instrucoes'>
+                Leia a questão e clique na resposta
+            </article>
+            <article class='questoes'>
+                <header class='questao'>
+                    <span id='numQuestao'></span>
+                    <h2 id='pergunta'></h2>
+                </header>
+                <div class='corpo'>
+                    <ol type='A' id='alternativas'>
+                        <li id='a' class='respostas'></li>
+                        <li id='b' class='respostas'></li>
+                        <li id='c' class='respostas'></li>
+                        <li id='d' class='respostas'></li>
+                        <li id='e' class='respostas'></li>
+                    </ol>
+                </div>
+            </article>
+            <article id='aviso'>Questão <span id='numero'></span> de <span id='total'></span></article>
+            <article id='pontos'>
+                <div class="temp">
+                </div>
+            </article>
+        </section>
+
+
+        <div class="fundo">
+            <img src="" alt="">
+
+        </div>
+        <footer class='sal'>Medeiros &copy; 2024</footer>
+    </main>
+    <script src="JS/script.js"></script>
+    <script src="JS/audios.js"></script>
+</body>
+
+</html>

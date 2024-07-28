@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Carter+One&display=swap');
+
+body {
+  background-image: url(../img/LP.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(99, 7, 219);
+  overflow-x: hidden;
+  /* Impede o scroll horizontal */
+}
+
+.botão {
+  position: absolute;
+  top: 70%;
+  left: 11.5%;
+}
+
+.botão button {
+  font-family: "Carter One", system-ui;
+  background-color: #ffc107;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.botão button a {
+  text-decoration: none;
+  color: black;
+}
+
+.AudioBot {
+  position: fixed;
+  top: 1%;
+  right: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.AudioControl {
+  background-color: orange;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px; /* Espaço entre o círculo e o botão */
+}
+
+.AudioBot audio {
+  display: none;
+}
+
+.AudioBot img {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.AudioBot button {
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: center;
+}
+
+
+
+@media (max-width: 1200px) {
+  body {
+    background-image: url(../img/LP.svg);
+    /* Se você deseja manter a mesma imagem */
+    /* Aumenta a imagem para 120% do seu tamanho original */
+  }
+
+  .AudioBot {
+    position: absolute;
+    top: 1%;
+    right: 3%;
+
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background-image: url(../img/LP.svg);
+    background-size: 1117px 1117px;
+    /* Aumenta a imagem para 150% do seu tamanho original */
+    background-position: 0px -230px;
+    /* Move a imagem mais para cima */
+  
+  }
+
+  .botão {
+    left: 21%;
+  }
+
+  .AudioBot {
+    right: auto;
+    /* Remove a posição à direita */
+    left: 3%;
+    /* Move o botão para a esquerda */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background-image: url(../img/LP.svg);
+    background-position: -90px -230px;
+    /* Move a imagem mais para cima */
+  }
+
+  .botão {
+    left: 6%;
+  }
+
+  .AudioBot {
+    right: auto;
+    /* Remove a posição à direita */
+    left: 3%;
+    /* Move o botão para a esquerda */
+    top: 0%;
+    /* Ajuste o valor conforme necessário para posicionar o botão mais abaixo */
+  }
+
+}
