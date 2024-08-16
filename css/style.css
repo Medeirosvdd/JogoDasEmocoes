@@ -75,7 +75,7 @@ body {
 
 @media (max-width: 1200px) {
   body {
-    background-image: url(../img/LP.svg);
+    background-image: url(../img/Group\ 1\ \(4).svg););
     /* Se você deseja manter a mesma imagem */
     /* Aumenta a imagem para 120% do seu tamanho original */
   }
@@ -90,7 +90,7 @@ body {
 
 @media (max-width: 768px) {
   body {
-    background-image: url(../img/LP.svg);
+    background-image: url(../img/Group\ 1\ \(4).svg););
     background-size: 1117px 1117px;
     /* Aumenta a imagem para 150% do seu tamanho original */
     background-position: 0px -230px;
@@ -112,7 +112,7 @@ body {
 
 @media (max-width: 480px) {
   body {
-    background-image: url(../img/LP.svg);
+    background-image: url(../img/Group\ 1\ \(4).svg););
     background-position: -90px -230px;
     /* Move a imagem mais para cima */
   }
