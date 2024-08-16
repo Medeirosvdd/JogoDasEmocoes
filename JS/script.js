@@ -4,6 +4,7 @@ let raiva = 0;
 let nojinho = 0;
 let medo = 0;
 let tess = '';
+let oq = '';
 
 const questoes = [
     {
@@ -172,35 +173,45 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 const modalHTML = `
-    <div id="fimModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Fim do Jogo!</h2>
-            <div id="resultado">
-                <!-- Removido as pontuações das emoções -->
-                <p><strong>Você é: <span id="finalEmotion"></span></strong></p>
-                <p>Reiniciando em <span id="timer">3</span> segundos...</p>
-            </div>
+   <div id="fimModal" class="modal">
+    <div class="modal-content" style="font-size: 18px;"> <!-- Ajuste o tamanho aqui -->
+        <span class="close">&times;</span>
+        <h2>Fim do Jogo!</h2>
+        <div id="resultado">
+            <p><strong>Você é: <span id="finalEmotion"></span></strong></p>
+            <p>Reiniciando em <span id="timer">3</span> segundos...</p>
         </div>
     </div>
+</div>
+
 `;
 
 document.body.insertAdjacentHTML('beforeend', modalHTML);
 
 
 function fimDoJogo() {
+    let description = "";
+
     if (alegria > tristeza && alegria > raiva && alegria > nojinho && alegria > medo) {
-        tess = "Alegria";
+        tess = "Felicidade";
+        description = "Você é naturalmente otimista e consegue encontrar o lado positivo em quase todas as situações. Essa atitude não só te faz uma pessoa agradável de se estar por perto, mas também te ajuda a superar desafios com mais facilidade. Continue espalhando essa energia, mas tenha cuidado para não ignorar sentimentos mais profundos quando surgirem.";
     } else if (tristeza > alegria && tristeza > raiva && tristeza > nojinho && tristeza > medo) {
         tess = "Tristeza";
+        description = "Você é alguém que sente as emoções com profundidade. A tristeza é uma parte importante da vida e pode te ajudar a refletir e crescer. No entanto, é importante encontrar formas de equilibrar esses sentimentos com momentos de alegria.";
     } else if (raiva > alegria && raiva > tristeza && raiva > nojinho && raiva > medo) {
         tess = "Raiva";
+        description = "Você é uma pessoa determinada e com forte senso de justiça. A raiva pode te dar energia para enfrentar desafios e corrigir injustiças. No entanto, é importante gerenciar essa emoção para que ela não se transforme em ressentimento ou agressividade."
+
+;
     } else if (nojinho > alegria && nojinho > tristeza && nojinho > raiva && nojinho > medo) {
-        tess = "Nojinho";
+        tess = "Desprezo";
+        description = "Você valoriza seus próprios padrões e não tem medo de expressar insatisfação quando algo não corresponde a eles. Isso pode te proteger de situações indesejadas, mas também pode dificultar relacionamentos. Lembre-se de que todos têm algo a oferecer.";
     } else if (medo > alegria && medo > tristeza && medo > raiva && medo > nojinho) {
         tess = "Medo";
+        description = "Você tende a ser cauteloso e evita situações que possam te colocar em risco. O medo pode te proteger, mas é importante não deixar que ele te impeça de aproveitar novas oportunidades.";
     } else {
         tess = "Indefinido";
+        description = "Parece que você possui uma combinação equilibrada de emoções, sem uma que se destaque claramente. Isso indica que você tem uma perspectiva complexa e bem-arredondada sobre a vida.";
     }
 
     document.getElementById('finalEmotion').textContent = tess;
@@ -208,12 +219,17 @@ function fimDoJogo() {
     const modal = document.getElementById("fimModal");
     modal.style.display = "block";
 
+    // Adicione o texto descritivo ao modal
+    const descriptionElement = document.createElement('p');
+    descriptionElement.textContent = description;
+    document.getElementById('resultado').appendChild(descriptionElement);
+
     const span = document.getElementsByClassName("close")[0];
     span.onclick = function() {
         modal.style.display = "none";
     }
 
-    let timer = 3;
+    let timer = 5;
     const timerElement = document.getElementById('timer');
     const intervalId = setInterval(() => {
         timer--;

@@ -10,7 +10,7 @@
     margin: 0;
     padding: 0;
     height: 100%;
-    background-image: url(../img/Fundo\ jogo.svg);
+    background-image: url(../img/image.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -112,6 +112,10 @@
   a {
     color: rgb(132, 184, 197);
     text-decoration: none;
+  }
+  .risco{
+  padding: 0 50px;
+
   }
 
   /* Fim da navBar */

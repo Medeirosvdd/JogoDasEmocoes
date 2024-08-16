@@ -18,13 +18,7 @@
                 <span class="fas fa-bars"></span>
             </div>
             <div class="logo">
-                Divertida mente
-            </div>
-            <div class="nav-items">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="">Sobre</a></li>
-                <li><a href="Jogo.html">Jogo</a></li>
-                <li><a href="">Contatos</a></li>
+                <a href="index.html"> Jogo das Emoções</a>
             </div>
             <div class="search-icon">
                 <span class="fas fa-search"></span>
@@ -34,8 +28,9 @@
             </div>
 
         </nav>
-
-
+        <div class="risco">
+            <hr>
+        </div>
         <script>
             const menuBtn = document.querySelector(".menu-icon span");
             const searchBtn = document.querySelector(".search-icon");
@@ -69,13 +64,14 @@
             <audio id="myAudio">
                 <source id="source1" src="audio/trilha-sonora-do-divertida-mente.wav" type="audio/x-wav">
                 <source id="source2" src="audio/Disney Pixars Inside Out - 02 - Team Building.mp3" type="audio/mp3">
-                <source id="source3" src="audio/Disney Pixars Inside Out - 03 Nomanisone Island  National Movers.mp3" type="audio/mp3">
+                <source id="source3" src="audio/Disney Pixars Inside Out - 03 Nomanisone Island  National Movers.mp3"
+                    type="audio/mp3">
             </audio>
-    
+
             <img id="audioIcon" src="img/volume-high-solid.svg" alt="Play" onclick="toggleAudio()">
         </div>
     </div>
-    
+
 
     <div id="resultadoModal" class="modal">
         <div id="modalContent" class="modal-content">
